@@ -5,15 +5,17 @@ group = "com.netflix.${githubProjectName}"
 buildscript {
     repositories {
         mavenLocal()
-        mavenCentral() // maven { url 'http://jcenter.bintray.com' }
+        maven { url 'http://jcenter.bintray.com' }
+        mavenCentral()
     }
-    apply from: file('gradle/buildscript.gradle'), to: buildscript 
+    apply from: file('gradle/buildscript.gradle'), to: buildscript
 }
 
 allprojects {
-    repositories { 
+    repositories {
         mavenLocal()
-        mavenCentral() // maven { url: 'http://jcenter.bintray.com' }
+        mavenCentral()
+        jcenter()
     }
 }
 
@@ -25,6 +27,13 @@ apply from: file('gradle/release.gradle')
 
 apply plugin: 'war'
 apply plugin: 'jetty'
+
+configure(allprojects){
+    apply plugin: 'propdeps'
+    apply plugin: 'propdeps-maven'
+    apply plugin: 'propdeps-idea'
+    apply plugin: 'propdeps-eclipse'
+}
 
 dependencies {
     compile 'javax.ws.rs:jsr311-api:1.1.1'
