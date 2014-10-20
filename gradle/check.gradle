@@ -4,27 +4,26 @@ apply plugin: 'checkstyle'
 checkstyle {
     ignoreFailures = true
     configFile = rootProject.file('codequality/checkstyle.xml')
-    toolVersion = "5.7"
+    toolVersion = '5.9'
 }
 
 // FindBugs
 apply plugin: 'findbugs'
 findbugs {
     ignoreFailures = true
-    toolVersion = "3.0.0"
+    toolVersion = '3.0.0'
 }
 
 // PMD
 apply plugin: 'pmd'
 pmd {
-    toolVersion = "5.1.1"
+    toolVersion = '5.1.3'
 }
-//tasks.withType(Pmd) { reports.html.enabled true }
 
 //apply plugin: 'cobertura'
 //cobertura {
 //    format = 'html'
 //    includes = ['**/*.java', '**/*.groovy']
 //    excludes = []
-//    toolVersion = "2.0.3"
+//    toolVersion = '2.0.3'
 //}
