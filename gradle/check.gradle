@@ -20,10 +20,10 @@ pmd {
     toolVersion = '5.1.3'
 }
 
-//apply plugin: 'cobertura'
-//cobertura {
-//    format = 'html'
-//    includes = ['**/*.java', '**/*.groovy']
-//    excludes = []
-//    toolVersion = '2.0.3'
-//}
+apply plugin: 'net.saliman.cobertura'
+cobertura {
+    coverageFormats = ['html', 'xml']
+    coverageIncludes = []
+    coverageExcludes = []
+    coberturaVersion = '2.1'
+}
